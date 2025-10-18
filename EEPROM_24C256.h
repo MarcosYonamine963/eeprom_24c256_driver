@@ -1,10 +1,3 @@
-/*
- * 24C256N.h
- *
- *  Created on: Oct 16, 2025
- *      Author: McLovin
- */
-
 #ifndef EEPROM_24C256_H_
 #define EEPROM_24C256_H_
 
@@ -25,7 +18,9 @@ typedef struct
 
 typedef struct
 {
-    uint8_t slave_addr;
+    uint8_t A2_PIN_LEVEL;
+    uint8_t A1_PIN_LEVEL;
+    uint8_t A0_PIN_LEVEL;
     eeprom_24c256_i2c_funcs_t i2c_funcs;
 }eeprom_24c256_t;
 
@@ -37,7 +32,6 @@ typedef enum
 
 eeprom_24c256_status_t EEPROM_24C256_Write_Byte(eeprom_24c256_t *eeprom, uint16_t address, uint8_t data);
 eeprom_24c256_status_t EEPROM_24C256_Read_Byte(eeprom_24c256_t *eeprom, uint16_t address, uint8_t *data);
-
 
 #ifdef __cplusplus
 }
